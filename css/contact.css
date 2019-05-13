@@ -1,0 +1,15 @@
+.contact {
+    margin: 2rem;
+}
+
+.contact .logo-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contact .logo-cont img {
+    max-width: 50%;
+    width: 15rem;
+}

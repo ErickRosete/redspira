@@ -1,0 +1,128 @@
+:root {
+    --custom-blue: #4BACE2;
+    --custom-gray: #BABABA;
+    --custom-green: #62B758;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-navbar {
+    background-color: var(--custom-green);
+    color: white;
+}
+
+.main-navbar .navbar-nav .nav-link, .main-navbar .navbar-toggler {
+    color: white;
+    transition: all 500ms;
+    font-weight: 500;
+}
+
+.main-navbar .navbar-nav .nav-link:hover, .main-navbar .navbar-nav .nav-item.active .nav-link {
+    font-weight: 700;
+    color: white;
+}
+
+.main-navbar .navbar-nav .nav-item.active .nav-link {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+h1, h2, h3, a, p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--custom-gray);
+    font-weight: 600;
+}
+
+.main-btn {
+    background-color: var(--custom-blue);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+}
+
+.main-btn:hover {
+    background-color: rgb(47, 140, 190);
+}
+
+/* social network */
+
+.social-network {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    background-color: var(--custom-blue);
+    padding: 1rem;
+    font-size: 2rem;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.social-network i {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* footer */
+
+footer {
+    background-color: var(--custom-blue);
+    padding: 1rem;
+    position: relative;
+}
+
+footer p {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+}
+
+footer #company {
+    position: relative;
+    margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+    .main-navbar .navbar-nav .nav-link:hover, .main-navbar .navbar-nav .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-navbar ul.navbar-nav li.nav-item:after {
+        content: '|';
+        margin: 0 1rem;
+        margin-bottom: 0.25rem;
+    }
+    .main-navbar ul.navbar-nav li.nav-item:last-child:after {
+        content: '';
+        margin: 0;
+    }
+    .main-btn {
+        padding: 0.5rem 2.5rem;
+    }
+    .social-network {
+        display: flex;
+    }
+    p {
+        font-size: 1.2rem
+    }
+    footer #company {
+        margin-top: 0;
+        position: absolute;
+        top: 50%;
+        right: 3rem;
+        transform: translateY(-50%)
+    }
+}

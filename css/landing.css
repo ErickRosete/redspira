@@ -1,0 +1,151 @@
+#intro {
+    margin: 2rem 0;
+}
+
+#intro .logo {
+    max-width: 75%;
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#intro p {
+    text-align: center;
+}
+
+#intro #map-cont {
+    position: relative;
+}
+
+#intro #map-cont #map-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+}
+
+#intro #sec-row {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#intro #sec-row #img-cont {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#intro #sec-row a {
+    display: block;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+/* how */
+
+#how-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#how-section .network {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#how-section .col-cont {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 100%;
+    margin-bottom: 3rem;
+}
+
+#how-section .col-cont p {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#how-section .col-cont img {
+    width: 40%;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+#how-section .col-cont .main-btn {
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+/* contact */
+
+#contact label {
+    color: var(--custom-green);
+    font-weight: 600;
+}
+
+#contact #info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+#contact #info .title {
+    color: var(--custom-green);
+    font-weight: 600;
+}
+
+#contact #info p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+    #intro {
+        margin: 4rem 0;
+    }
+    #intro #map-cont img {
+        width: 90%;
+        margin: auto;
+        display: block;
+    }
+    #intro #sec-row {
+        margin-top: 5rem;
+    }
+    #intro #sec-row img {
+        max-width: 120%;
+        margin-right: auto;
+    }
+    #intro #sec-row a {
+        margin-top: 3rem;
+    }
+    #how-section .network {
+        display: flex;
+    }
+    #how-section .col-cont {
+        width: 100%;
+    }
+    #how-section .col-cont img {
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+    #how-section .col-cont .main-btn {
+        width: 100%;
+    }
+    #contact #contact-img {
+        max-width: 108%;
+    }
+}
+
+@media (min-width: 1000px) {
+    #intro #sec-row a {
+        margin-top: 6rem;
+    }
+}
