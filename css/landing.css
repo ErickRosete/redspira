@@ -71,7 +71,7 @@
 }
 
 #how-section .col-cont img {
-    width: 40%;
+    width: 50%;
     display: block;
     margin: auto;
     margin-bottom: 1rem;
@@ -133,7 +133,7 @@
         width: 100%;
     }
     #how-section .col-cont img {
-        width: 70%;
+        width: 80%;
         margin-bottom: 2rem;
     }
     #how-section .col-cont .main-btn {
