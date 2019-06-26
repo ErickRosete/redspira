@@ -107,6 +107,15 @@
     margin-bottom: 0;
 }
 
+#contact #contact-img-cont {
+    display: flex;
+    justify-content: center;
+}
+
+#contact #contact-img {
+    max-width: 120%;
+}
+
 @media (min-width: 600px) {
     #intro {
         margin: 4rem 0;
@@ -139,13 +148,16 @@
     #how-section .col-cont .main-btn {
         width: 100%;
     }
-    #contact #contact-img {
-        max-width: 108%;
+    #contact #contact-img-cont {
+        justify-content: flex-end;
     }
 }
 
 @media (min-width: 1000px) {
     #intro #sec-row a {
         margin-top: 6rem;
+    }
+    #contact #contact-img {
+        max-width: 150%;
     }
 }
