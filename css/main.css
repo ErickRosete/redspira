@@ -2,6 +2,33 @@
     --custom-blue: #4BACE2;
     --custom-gray: #BABABA;
     --custom-green: #62B758;
+    --custom-light-gray: rgb(250, 250, 250);
+}
+
+.gray-section {
+    background-color: var(--custom-light-gray);
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.gray-section p, .gray-section h1 {
+    color: black;
+    text-align: center;
+}
+
+.green-section {
+    background-color: var(--custom-green);
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.green-section p, .green-section h1 {
+    color: white;
+    text-align: center;
+}
+
+.mw-80 {
+    max-width: 95%;
 }
 
 .flex-center {
@@ -95,6 +122,9 @@ footer #company {
 }
 
 @media (min-width: 600px) {
+    .mw-80 {
+        max-width: 80%;
+    }
     .main-navbar .navbar-nav .nav-link:hover, .main-navbar .navbar-nav .nav-item {
         display: flex;
         justify-content: center;
