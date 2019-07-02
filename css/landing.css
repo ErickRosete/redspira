@@ -108,44 +108,130 @@
     margin-bottom: 3rem;
 }
 
-/* contact */
-
-#contact label {
-    color: var(--custom-green);
-    font-weight: 600;
+#quote-section {
+    margin-top: 1rem;
+    width: 100%;
+    background-image: url("../assets/landing/bg-clouds.jpg");
+    background-image: linear-gradient(#00000090, #00000000), url("../assets/landing/bg-clouds.jpg");
+    background-color: var(--custom-blue);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+#quote-section #quote-carousel {
+    min-height: 60rem;
+}
+
+
+#quote-section .title {
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+#quote-section .quote {
+    min-height: 58rem;
+    width: 90%;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+#quote-section .quote .quote-content {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+#quote-section .quote-author .author-img {
+    margin-top: -5rem;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 4px solid white;
+
+}
+
+#quote-section .quote-author {
+    margin-bottom: 2rem;
+}
+
+#quote-section .quote-author p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+#quote-section .quote-author .author-pos {
+    color: var(--custom-gray)
+}
+
+#quote-section .quote-content p {
+    color: black;
+
+}
+
+#quote-section .quote-content i {
+    margin-right: 1rem;
+}
+
 
 @media (min-width: 600px) {
     #intro {
         margin: 4rem 0;
     }
+
     #intro #map-cont img {
         width: 90%;
         margin: auto;
         display: block;
     }
+
     #intro #sec-row {
         margin-top: 5rem;
     }
+
     #intro #sec-row img {
         max-width: 120%;
         margin-right: auto;
     }
+
     #intro #sec-row a {
         margin-top: 3rem;
     }
+
     #how-section .network {
         display: flex;
     }
+
     #how-section .col-cont {
         width: 100%;
     }
+
     #how-section .col-cont img {
         width: 80%;
         margin-bottom: 2rem;
     }
+
     #how-section .col-cont .main-btn {
         width: 100%;
+    }
+
+    #quote-section .quote {
+        width: 70%;
+        min-height: 70vh;
+    }
+
+    #quote-section #quote-carousel {
+        min-height: 75vh;
     }
 }
 

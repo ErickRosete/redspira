@@ -1,3 +1,10 @@
+/* contact */
+
+#contact label {
+    color: var(--custom-green);
+    font-weight: 600;
+}
+
 #contact h1 {
     margin: 1rem 0;
     color: black;
