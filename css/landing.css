@@ -108,6 +108,24 @@
     margin-bottom: 3rem;
 }
 
+#allies-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+#allies-section .title {
+    text-align: center;
+    color: black;
+}
+
+#allies-section img {
+    height: 5rem;
+    margin: 0.5rem 2rem;
+}
+
 #quote-section {
     margin-top: 1rem;
     width: 100%;
@@ -123,13 +141,11 @@
     min-height: 60rem;
 }
 
-
 #quote-section .title {
     color: white;
     text-align: center;
     padding: 2rem 0;
 }
-
 
 #quote-section .quote {
     min-height: 58rem;
@@ -158,7 +174,6 @@
     margin-bottom: 1rem;
     border-radius: 50%;
     border: 4px solid white;
-
 }
 
 #quote-section .quote-author {
@@ -176,60 +191,54 @@
 
 #quote-section .quote-content p {
     color: black;
-
 }
 
 #quote-section .quote-content i {
     margin-right: 1rem;
 }
 
-
 @media (min-width: 600px) {
     #intro {
         margin: 4rem 0;
     }
-
     #intro #map-cont img {
         width: 90%;
         margin: auto;
         display: block;
     }
-
     #intro #sec-row {
         margin-top: 5rem;
     }
-
     #intro #sec-row img {
         max-width: 120%;
         margin-right: auto;
     }
-
     #intro #sec-row a {
         margin-top: 3rem;
     }
-
     #how-section .network {
         display: flex;
     }
-
     #how-section .col-cont {
         width: 100%;
     }
-
     #how-section .col-cont img {
         width: 80%;
         margin-bottom: 2rem;
     }
-
     #how-section .col-cont .main-btn {
         width: 100%;
     }
-
+    #allies-section .title {
+        margin-right: 2rem;
+    }
+    #allies-section img {
+        margin-left: 2rem;
+    }
     #quote-section .quote {
         width: 70%;
         min-height: 70vh;
     }
-
     #quote-section #quote-carousel {
         min-height: 75vh;
     }
