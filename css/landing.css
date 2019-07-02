@@ -9,8 +9,16 @@
     margin-bottom: 1rem;
 }
 
+#intro h1 {
+    text-transform: uppercase;
+    color: rgb(80, 80, 80);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
 #intro p {
-    text-align: center;
+    color: rgb(60, 60, 60);
 }
 
 #intro #map-cont {
