@@ -59,7 +59,7 @@
     text-underline-position: under;
 }
 
-h1, h2, h3, a, p {
+h1, h2, h3, a, p, li {
     font-family: 'Montserrat', sans-serif;
     color: var(--custom-gray);
     font-weight: 600;
