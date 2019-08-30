@@ -56,73 +56,84 @@
     </nav>
 
     <section id="content">
-        <h1>Portal Científico</h1>
-        <p>En este calendario puedes visualizar de manera rápida el valor de AQI, este indice notifica la calidad del
+        <h1 style="color:black;">Portal Científico</h1>
+        <p style="color:rgb(0,0,0,0.5);">En este calendario puedes visualizar de manera rápida el valor de AQI, este
+            indice notifica la calidad del
             aire
             con respecto a cierto contaminante</p>
-        <div id="filters">
-            <div class="filter-div" id="city-div">
-                <label for="city-list">Ciudades</label>
-                <select class="filter-select" id="city-list" name="city"></select>
-            </div>
 
-            <div class="filter-div" id="area-div">
-                <label for="area-list">Zona</label>
-                <select class="area-select" id="area-list" name="area"></select>
-            </div>
 
-            <div class="filter-div" id="param-div">
-                <label for="param-list">Contaminante</label>
-                <select class="filter-select" id="param-list" name="param">
-                    <option value="PM25">PM2.5</option>
-                    <option value="PM10">PM10</option>
-                    <!-- <option value="PM25">CO</option>
+        <div class="flexbox-calendar">
+
+            <div class="column-flexbox">
+                <div id="filters">
+                    <div class="filter-div" id="city-div">
+                        <label for="city-list">Ciudades</label>
+                        <select class="filter-select" id="city-list" name="city"></select>
+                    </div>
+
+                    <div class="filter-div" id="area-div">
+                        <label for="area-list">Zona</label>
+                        <select class="area-select" id="area-list" name="area"></select>
+                    </div>
+
+                    <div class="filter-div" id="param-div">
+                        <label for="param-list">Contaminante</label>
+                        <select class="filter-select" id="param-list" name="param">
+                            <option value="PM25">PM2.5</option>
+                            <option value="PM10">PM10</option>
+                            <!-- <option value="PM25">CO</option>
                     <option value="PM25">O3</option>
                     <option value="PM25">SO2</option> -->
-                </select>
-            </div>
-        </div>
-
-        <div id="calendar-container">
-            <div id="month-list"></div>
-            <div id="month-calendar">
-                <div id="calendar-header">
-                    <button id="back" onclick="changeMonth(-1)">Atras</button>
-                    <span id="calendar-month-year"></span>
-                    <button id="next" onclick="changeMonth(1)">Siguiente</button>
+                        </select>
+                    </div>
                 </div>
-                <div id="calendar-dates"></div>
+
+                <div id="calendar-container">
+                    <div id="month-list"></div>
+                    <div id="month-calendar">
+                        <div id="calendar-header">
+                            <button id="back" onclick="changeMonth(-1)">Atras</button>
+                            <span id="calendar-month-year"></span>
+                            <button id="next" onclick="changeMonth(1)">Siguiente</button>
+                        </div>
+                        <div id="calendar-dates"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="flexbox-simbologia">
+                <p style="color:rgb(0,0,0,0.5);">El indice de la calidad del aire (AQI) es clasificado de acuerdo a los
+                    siguientes rangos: </p>
+                <ul id="aqi-list">
+                    <li>
+                        <div class="tile" id="green"></div>Bueno (0-50)
+                    </li>
+                    <li>
+                        <div class="tile" id="yellow"></div>Moderado (51-100)
+                    </li>
+                    <li>
+                        <div class="tile" id="orange"></div>Insalubre para grupos sensibles (101-150)
+                    </li>
+                    <li>
+                        <div class="tile" id="red"></div>Insalubre (151-200)
+                    </li>
+                    <li>
+                        <div class="tile" id="purple"></div>Muy insalubre (201-300)
+                    </li>
+                    <li>
+                        <div class="tile" id="brown"></div>Peligroso (301-500)
+                    </li>
+                </ul>
             </div>
         </div>
 
         <div id="hour-calendar">
 
         </div>
-        <p>El indice de la calidad del aire (AQI) es clasificado de acuerdo a los siguientes rangos: </p>
-        <ul id="aqi-list">
-            <li>
-                <div class="tile" id="green"></div>Bueno (0-50)
-            </li>
-            <li>
-                <div class="tile" id="yellow"></div>Moderado (51-100)
-            </li>
-            <li>
-                <div class="tile" id="orange"></div>Insalubre para grupos sensibles (101-150)
-            </li>
-            <li>
-                <div class="tile" id="red"></div>Insalubre (151-200)
-            </li>
-            <li>
-                <div class="tile" id="purple"></div>Muy insalubre (201-300)
-            </li>
-            <li>
-                <div class="tile" id="brown"></div>Peligroso (301-500)
-            </li>
-        </ul>
         <hr>
 
-        <h1>Gráficas</h1>
-        <p>Puedes comparar el comportamiento del AQI en diferentes años</p>
+        <h1 style="color:black">Gráficas</h1>
+        <p style="color:rgb(0,0,0,0.5);">Puedes comparar el comportamiento del AQI en diferentes años</p>
         <div id="graph" style="width:700px;height:500px;"></div>
 
 
@@ -151,11 +162,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
