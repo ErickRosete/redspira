@@ -5,6 +5,99 @@
     align-items: center;
 }
 
+h1 {
+    color: black;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* #title {
+    color: black
+} */
+
+#short-desc {
+    max-width: 90%;
+    color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+#simbologia {
+    margin-bottom: 1rem;
+}
+
+#simbologia p {
+    font-size: 1rem;
+    color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#aqi-list {
+    padding-left: 0.5rem;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+#aqi-list li {
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 0rem;
+    font-size: 0.85rem;
+}
+
+#aqi-list .tile {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 5px;
+}
+
+#aqi-list .tile#green {
+    background-color: #00e400;
+}
+
+#aqi-list .tile#yellow {
+    background-color: #fffb00;
+}
+
+#aqi-list .tile#orange {
+    background-color: #ffa200;
+}
+
+#aqi-list .tile#red {
+    background-color: #ff3400;
+}
+
+#aqi-list .tile#purple {
+    background-color: #9d0049;
+}
+
+#aqi-list .tile#brown {
+    background-color: #7e0023;
+}
+
+#filters {
+    display: flex;
+    max-width: 100%;
+    width: 70rem;
+    justify-content: center;
+}
+
+#filters .filter-div {
+    width: 20%;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#filters label {
+    margin-bottom: 0;
+    margin-left: 5px;
+    color: gray;
+}
+
 #calendar-container {
     margin: 2rem 0px;
     width: 50rem;
@@ -27,17 +120,26 @@
 }
 
 #calendar-dates td {
-    position: relative;
     width: 3rem;
     height: 3rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: bold;
 }
 
-#calendar-dates td.colored:hover {
+#calendar-dates .cont-div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+#calendar-dates .colored:hover {
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.75;
     border: 2px solid black;
 }
 
@@ -45,9 +147,9 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    margin: 0.5rem;
-    color: rgb(0,0,0,0.3);
-    font-size: 0.85rem;
+    margin: 0;
+    color: rgb(0, 0, 0, 0.3);
+    font-size: 0.60rem;
 }
 
 .hour-td {
@@ -97,137 +199,30 @@
     font-size: 1.5rem
 }
 
-h1 {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-}
-
-p {
-    font-size: 1.15rem;
-    max-width: 60%;
-    text-align: center;
-}
-
-@media only screen and (min-width: 600px) {
-    #calendar-container {
-        flex-direction: row;
-    }
-    #month-list {
-        flex-direction: column;
-    }
-    .hour-td {
-        width: 5rem;
-        height: 3rem;
-    }
-    #calendar-dates td {
-        width: 5rem;
-        height: 5rem;
-        font-size: 1.1rem;
-    }
-}
-
 #calendar-dates table {
     animation: fade-in 300ms;
+    border-spacing: 0px;
 }
 
 #month-list div {
     animation: fade-in 300ms;
 }
 
-#aqi-list {
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
-}
-
-#aqi-list li {
-    list-style-type: none;
-    display: flex;
-    margin-bottom: 5px;
-}
-
-#aqi-list .tile {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 5px;
-}
-
-#aqi-list .tile#green {
-    background-color: #00e400;
-}
-
-#aqi-list .tile#yellow {
-    background-color: #fffb00;
-}
-
-#aqi-list .tile#orange {
-    background-color: #ffa200;
-}
-
-#aqi-list .tile#red {
-    background-color: #ff3400;
-}
-
-#aqi-list .tile#purple {
-    background-color: #9d0049;
-}
-
-#aqi-list .tile#brown {
-    background-color: #7e0023;
-}
-
 #graph {
     margin-bottom: 2rem;
 }
 
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        /* transform: translateY(20px); */
-    }
-    100% {
-        opacity: 1;
-        /* transform: translateY(0); */
-    }
-}
-
-.column-flexbox{
-    display: flex;
-    flex-direction: column;
-    align-content:space-around;
-    padding: 2rem;
-}
-
-.flexbox-calendar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 2rem;
-
-}
-
-#flexbox-simbologia{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 45%;
-    padding-bottom: 3rem;
-}
-
 #hour-calendar {
     margin-bottom: 2rem;
+    max-width: 90%;
+    overflow: scroll;
 }
 
-/* #hour-calendar table {
-    transform: rotate(90deg);
-} */
-
 #hour-calendar td {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     text-align: center;
-    font-size: .8rem;
+    font-size: .5rem;
 }
 
 .rotate {
@@ -240,19 +235,78 @@ p {
 }
 
 #hour-calendar .hour-calendar-label td, #hour-calendar .hour-calendar-label {
-    font-size: 1rem;
+    font-size: 0.6rem;
     font-weight: bold;
 }
 
-#filters {
-    display: flex;
-    width: 100%;
-    justify-content: center;
+#graph-desc {
+    color: rgb(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-#filters .filter-div {
-    width: 20%;
-    margin: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
+#graph {
+    max-width: 90%;
+    width: 60rem;
+}
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    #short-desc {
+        max-width: 60%;
+    }
+    #simbologia p {
+        font-size: 1.1rem;
+    }
+    #aqi-list {
+        padding-left: 3rem;
+    }
+    #aqi-list li {
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+    #calendar-container {
+        flex-direction: row;
+    }
+    #calendar-dates td {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.1rem;
+    }
+    .calendar-day-number {
+        margin: 0.5rem;
+        font-size: 0.85rem;
+    }
+    #month-list {
+        flex-direction: column;
+    }
+    .hour-td {
+        width: 5rem;
+        height: 3rem;
+    }
+
+    #hour-calendar {
+        overflow: hidden;
+    }
+    #hour-calendar td {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: .8rem;
+    }
+    #hour-calendar .hour-calendar-label td, #hour-calendar .hour-calendar-label {
+        font-size: 1rem;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        /* transform: translateY(20px); */
+    }
+    100% {
+        opacity: 1;
+        /* transform: translateY(0); */
+    }
 }

@@ -15,7 +15,7 @@ var trace2 = {
 var data = [trace1, trace2];
 
 var layout = {
-    title: 'Comparativa de AQI', 
+    title: 'Comparativa de AQI',
     font: {
         // family: 'Courier New, monospace',
         size: 16
@@ -28,4 +28,4 @@ var layout = {
     }
 };
 
-Plotly.newPlot('graph', data, layout);
+Plotly.newPlot('graph', data, layout, { responsive: true });

@@ -89,28 +89,39 @@ const getRowDayNames = () => {
 const createEmptyDatetd = (day = "") => {
     var td = document.createElement('td');
     td.style.backgroundColor = "white";
+
+    var contDiv = document.createElement('div');
+    contDiv.classList.add("cont-div");
     if (day != "") {
-        td.innerHTML = "ND"
+        contDiv.innerHTML = "ND"
     }
+
     const dayDiv = document.createElement('div')
     dayDiv.innerHTML = day;
     dayDiv.classList.add("calendar-day-number")
-    td.appendChild(dayDiv)
+    contDiv.appendChild(dayDiv)
+
+    td.appendChild(contDiv)
     return td;
 }
 
 const createDatetd = (data) => {
     var td = document.createElement('td');
-    td.classList.add("colored");
-    const date = new Date(data.interval)
-    td = colorElement(td, data.val_aqi)
-    td.addEventListener("click", () => showDayModal(date));
-    td.innerHTML = Math.round(data.val_aqi)
+    colorElement(td, data.val_aqi)
+
+    var contDiv = document.createElement('div');
+    contDiv.classList.add("cont-div");
+    contDiv.classList.add("colored");
+    colorElement(contDiv, data.val_aqi)
+    const date = new Date(data.interval);
+    contDiv.innerHTML = Math.round(data.val_aqi)
+    contDiv.addEventListener("click", () => showDayModal(date));
 
     const dayDiv = document.createElement('div')
     dayDiv.innerHTML = date.getDate();
     dayDiv.classList.add("calendar-day-number")
-    td.appendChild(dayDiv)
-
+    contDiv.appendChild(dayDiv)
+    
+    td.appendChild(contDiv)
     return td;
 }

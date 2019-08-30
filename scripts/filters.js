@@ -15,6 +15,7 @@ const setCitySelect = async () => {
         option.value = city.idarea;
         cityList.appendChild(option)
     });
+    setAreaSelect(cities[0].idarea)
     $('#city-list').select2();
 }
 
