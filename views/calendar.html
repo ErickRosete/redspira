@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
 
     <title>Redspira</title>
 </head>
@@ -55,11 +56,33 @@
     </nav>
 
     <section id="content">
-
         <h1>Portal Científico</h1>
         <p>En este calendario puedes visualizar de manera rápida el valor de AQI, este indice notifica la calidad del
             aire
             con respecto a cierto contaminante</p>
+        <div id="filters">
+            <div class="filter-div" id="city-div">
+                <label for="city-list">Ciudades</label>
+                <select class="filter-select" id="city-list" name="city"></select>
+            </div>
+
+            <div class="filter-div" id="area-div">
+                <label for="area-list">Zona</label>
+                <select class="area-select" id="area-list" name="area"></select>
+            </div>
+
+            <div class="filter-div" id="param-div">
+                <label for="param-list">Contaminante</label>
+                <select class="filter-select" id="param-list" name="param">
+                    <option value="PM25">PM2.5</option>
+                    <option value="PM10">PM10</option>
+                    <!-- <option value="PM25">CO</option>
+                    <option value="PM25">O3</option>
+                    <option value="PM25">SO2</option> -->
+                </select>
+            </div>
+        </div>
+
         <div id="calendar-container">
             <div id="month-list"></div>
             <div id="month-calendar">
@@ -70,6 +93,10 @@
                 </div>
                 <div id="calendar-dates"></div>
             </div>
+        </div>
+
+        <div id="hour-calendar">
+
         </div>
         <p>El indice de la calidad del aire (AQI) es clasificado de acuerdo a los siguientes rangos: </p>
         <ul id="aqi-list">
@@ -94,7 +121,8 @@
         </ul>
         <hr>
 
-        <p>En la siguiente gráfica puedes comparar el comportamiento del AQI en diferentes años</p>
+        <h1>Gráficas</h1>
+        <p>Puedes comparar el comportamiento del AQI en diferentes años</p>
         <div id="graph" style="width:700px;height:500px;"></div>
 
 
@@ -117,7 +145,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -130,18 +157,20 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-
     <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <script type="text/javascript" src="../scripts/auxiliar.js"></script>
     <script type="text/javascript" src="../scripts/colors.js"></script>
     <script type="text/javascript" src="../scripts/queries.js"></script>
     <script type="text/javascript" src="../scripts/calendar.js"></script>
     <script type="text/javascript" src="../scripts/date-calendar.js"></script>
     <script type="text/javascript" src="../scripts/month-calendar.js"></script>
-    <script type="text/javascript" src="../scripts/main.js"></script>
-
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="../scripts/hour-calendar.js"></script>
     <script type="text/javascript" src="../scripts/graphs.js"></script>
+    <script type="text/javascript" src="../scripts/filters.js"></script>
+    <script type="text/javascript" src="../scripts/main.js"></script>
 </body>
 
 </html>

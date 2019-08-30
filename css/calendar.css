@@ -45,7 +45,7 @@
     top: 0px;
     left: 0px;
     margin: 0.5rem;
-    color: #424242;
+    color: var(--custom-gray);
     font-size: 0.85rem;
 }
 
@@ -129,6 +129,10 @@ p {
     animation: fade-in 300ms;
 }
 
+#month-list div {
+    animation: fade-in 300ms;
+}
+
 #aqi-list {
     columns: 2;
     -webkit-columns: 2;
@@ -184,4 +188,46 @@ p {
         opacity: 1;
         /* transform: translateY(0); */
     }
+}
+
+#hour-calendar {
+    margin-bottom: 2rem;
+}
+
+/* #hour-calendar table {
+    transform: rotate(90deg);
+} */
+
+#hour-calendar td {
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.rotate {
+    -moz-transform: rotate(-90.0deg);
+    -o-transform: rotate(-90.0deg);
+    -webkit-transform: rotate(-90.0deg);
+    filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=0.083);
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)";
+    transform: rotate(-90.0deg);
+}
+
+#hour-calendar .hour-calendar-label td, #hour-calendar .hour-calendar-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#filters {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#filters .filter-div {
+    width: 20%;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
 }

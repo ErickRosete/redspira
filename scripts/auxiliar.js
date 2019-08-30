@@ -20,3 +20,15 @@ const mapValue = (value, fromLow, fromHigh, toLow, toHigh) => {
     return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
 }
 
+const numtohour = (num) => {
+    const hour = padWithZeroes(num, 2)
+    return `${hour}:00`
+}
+
+const getMonthData = (year, month, param = "day") => {
+    const first_date = new Date(year, month, 1);
+    first_date.setHours(0, 0, 0, 0)
+    const last_date = new Date(year, month + 1, 0)
+    last_date.setHours(23, 0, 0, 0)
+    return getAreaData(first_date, last_date, param)
+}

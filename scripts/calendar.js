@@ -1,7 +1,8 @@
-const setCalendar = (year, month) => {
+const setCalendar = () => {
+    var year = getSelectedYear();
+    var month = getSelectedMonth();
     setCalendarTitle(year, month);
     setCalendarTable(year, month);
-    setActiveMonth(year, month)
     disableButtons(year, month)
 }
 
@@ -31,7 +32,7 @@ const setCalendarTitle = (year, month) => {
 const setCalendarTable = async (year, month) => {
     const table = document.createElement('table');
     table.appendChild(getRowDayNames())
-    const data = await getMonthData(year, month)
+    const data = await getMonthData(year, month, "day")
 
     var count = 1;
     var j = 0;
@@ -48,7 +49,10 @@ const setCalendarTable = async (year, month) => {
                 td = createEmptyDatetd()
             } else {
                 if (data && j < data.length) {
-                    const day = new Date(data[j].interval).getDate()
+                    if (data[j].interval.split(' ').length <= 1) {
+                        data[j].interval = `${data[j].interval} 00:00:00`;
+                    }
+                    const day = new Date(data[j].interval).getDate();
                     if (day == count) {
                         td = createDatetd(data[j])
                         j++;
@@ -80,14 +84,6 @@ const getRowDayNames = () => {
         tr.appendChild(td)
     }
     return tr
-}
-
-const getMonthData = (year, month) => {
-    const first_date = new Date(year, month, 1);
-    first_date.setHours(0, 0, 0, 0)
-    const last_date = new Date(year, month + 1, 0)
-    last_date.setHours(23, 0, 0, 0)
-    return getAreaData(first_date, last_date, "day")
 }
 
 const createEmptyDatetd = (day = "") => {
