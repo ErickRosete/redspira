@@ -11,7 +11,15 @@ const setDateCalendar = async (date) => {
     start.setHours(0, 0, 0, 0)
     const end = new Date(date.getTime())
     end.setHours(23, 0, 0, 0)
-    const data = await getAreaData(start, end, "hour")
+
+    var data;
+    const idmonitor = sessionStorage.getItem('idmonitor');
+    if (idmonitor != null) {
+        data = await getMonitorData(start, end, "hour")
+    } else {
+        data = await getAreaData(start, end, "hour")
+    }
+
     const table = document.createElement('table');
     j = 0;
     for (i = 0; i < 24; i++) {

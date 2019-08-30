@@ -14,8 +14,8 @@ const setMonthCalendar = async () => {
         month_tile.id = `${date.getMonth()}-${date.getFullYear()}`
         month_tile.addEventListener('click',
             () => {
-                localStorage.setItem('month', date.getMonth())
-                localStorage.setItem('year', date.getFullYear())
+                sessionStorage.setItem('month', date.getMonth())
+                sessionStorage.setItem('year', date.getFullYear())
                 setCalendar();
                 setHourCalendar();
                 setActiveMonth();
@@ -31,7 +31,12 @@ const getEveryMonthData = () => {
     first_date.setHours(0, 0, 0, 0)
     const last_date = new Date(5000, 0, 1)
     last_date.setHours(23, 0, 0, 0)
-    return getAreaData(first_date, last_date, "month")
+    const idmonitor = sessionStorage.getItem('idmonitor')
+    if (idmonitor != null) {
+        return getMonitorData(first_date, last_date, "month")
+    } else {
+        return getAreaData(first_date, last_date, "month")
+    }
 }
 
 const setActiveMonth = () => {

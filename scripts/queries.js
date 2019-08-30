@@ -8,8 +8,18 @@ const getAreaData = (start, end, interval = "day") => {
     return ajaxQuery(url, req);
 }
 
+const getMonitorData = (start, end, interval = "day") => {
+    const firstDate = getFormattedDate(start);
+    const lastDate = getFormattedDate(end);
+    const idmonitor = getIdMonitor();
+    const idparam = getIdParam();
+    const req = { idmonitor: idmonitor, idparam: idparam, interval: interval, datetime1: firstDate, datetime2: lastDate, timeoffset: -7 }
+    const url = "http://app.respira.org.mx/ws/get-monitor-data.php";
+    return ajaxQuery(url, req);
+}
+
 const getAreaList = () => {
-    const url = "http://app.respira.org.mx/ws/get-areas.php"
+    const url = "http://app.respira.org.mx/ws/get-areas.php";
     return ajaxQuery(url, {});
 }
 
@@ -20,7 +30,7 @@ const getAreaTree = (idarea) => {
 }
 
 const getAreaByCoord = (lat, long) => {
-    const url = "http://app.respira.org.mx/ws/get-areas.php"
+    const url = "http://app.respira.org.mx/ws/get-areas.php";
     const req = { y: lat, x: long }
     return ajaxQuery(url, req);
 }
@@ -34,7 +44,7 @@ const ajaxQuery = (url, req = {}) => {
         crossDomain: true,
         method: 'GET',
         success: function (data) {
-            console.log(data)
+            // console.log(data)
             return data;
         }
     });

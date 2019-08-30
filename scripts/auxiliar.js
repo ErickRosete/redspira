@@ -30,5 +30,11 @@ const getMonthData = (year, month, param = "day") => {
     first_date.setHours(0, 0, 0, 0)
     const last_date = new Date(year, month + 1, 0)
     last_date.setHours(23, 0, 0, 0)
-    return getAreaData(first_date, last_date, param)
+
+    const idmonitor = sessionStorage.getItem('idmonitor')
+    if (idmonitor != null) {
+        return getMonitorData(first_date, last_date, param)
+    } else {
+        return getAreaData(first_date, last_date, param)
+    }
 }

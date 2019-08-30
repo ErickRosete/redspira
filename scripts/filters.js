@@ -1,3 +1,8 @@
+const hideFilters = () => {
+    const filters = document.getElementById('filters');
+    filters.style.display = "none";
+}
+
 const setFilters = () => {
     setCitySelect();
     $('#area-list').select2();
@@ -48,13 +53,13 @@ const setAreaSelect = async (idarea) => {
 }
 
 $('#city-list').on('change', async function () {
-    localStorage.setItem("idarea", this.value);
+    sessionStorage.setItem("idarea", this.value);
     setAreaSelect(this.value)
     refreshCalendars();
 });
 
 $('#area-list').on('change', function () {
-    localStorage.setItem("idarea", this.value);
+    sessionStorage.setItem("idarea", this.value);
     refreshCalendars();
 });
 
@@ -92,11 +97,8 @@ const setSelectByCoords = async (lat, long) => {
         } else if (areas.length == 2) {
             //change only selects
             const idcity = areas[0].idarea;
-            $('#city-list').val(idcity);
-            $('#city-list').select2().trigger('change.select2');
-            await setAreaSelect(areas[0].idarea)
-            //change calendars
-            selectArea(areas[1].idarea)
+            const idarea = areas[1].idarea;
+            selectAreaNoCityTrigger(idcity, idarea);
         }
     }
 }
@@ -111,7 +113,39 @@ const selectArea = (idarea) => {
     $('#area-list').select2().trigger('change');
 }
 
+const selectAreaNoCityTrigger = async (idcity, idarea) => {
+    $('#city-list').val(idcity);
+    $('#city-list').select2().trigger('change.select2');
+    await setAreaSelect(idcity)
+    selectArea(idarea)
+}
+
+const selectIdArea = async (idarea) => {
+    const areas = await getAreaList();
+    const area = areas.find(area => area.idarea == idarea);
+    if (area != null) {
+        if (area.parent == null || area.parent == 0) {
+            selectCity(idarea);
+        } else {
+            selectAreaNoCityTrigger(area.parent, area.idarea);
+        }
+    } else {
+        getUserLocation();
+    }
+}
+
 $('#param-list').on('change', async function () {
-    localStorage.setItem("idparam", this.value);
+    sessionStorage.setItem("idparam", this.value);
     refreshCalendars();
 });
+
+const selectIdParam = async (idparam) => {
+    $('#param-list').val(idparam);
+    $('#param-list').select2().trigger('change');
+} 
+
+const selectIdParamNoRefresh = (idparam) => {
+    sessionStorage.setItem("idparam", idparam);
+    $('#param-list').val(idparam);
+    $('#param-list').select2().trigger('change.select2');
+}
